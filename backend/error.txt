@@ -1,0 +1,186 @@
+GET /api/quiz/create 4:55:33 PM
+GET /api/quiz/create 4:55:39 PM
+POST /api/auth/register 11:53:25 PMundefined
+POST /auth/register 12:06:16 AM
+POST /api/auth/register 12:07:19 AMundefined
+POST /api/auth/register 12:20:36 AMundefined
+POST /api/auth/register 12:28:13 AMundefined
+GET /api/quiz/create 1:17:01 AM
+GET /api/quiz/create 1:19:34 AM
+GET /api/quiz/create 1:21:21 AM
+POST /api/auth/login 9:27:41 AMundefined
+POST /api/quiz/create 9:35:42 AMSyntaxError: Unexpected token '}', ..."rid",
+    }
+  ]
+}" is not valid JSON
+    at JSON.parse (<anonymous>)
+    at parse (D:\Quizzie\backend\node_modules\body-parser\lib\types\json.js:92:19)
+    at D:\Quizzie\backend\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at invokeCallback (D:\Quizzie\backend\node_modules\raw-body\index.js:238:16)
+    at done (D:\Quizzie\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (D:\Quizzie\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:514:28)
+    at endReadableNT (node:internal/streams/readable:1589:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+POST /api/quiz/create 10:56:58 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError", quizType: `Multiple Choice` is not a valid enum value for path `quizType`., optionType: `Single` is not a valid enum value for path `optionType`.
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 10:59:37 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError", quizType: `Multiple Choice` is not a valid enum value for path `quizType`., optionType: `Single` is not a valid enum value for path `optionType`.
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 10:59:53 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError", quizType: `Multiple Choice` is not a valid enum value for path `quizType`., optionType: `Single` is not a valid enum value for path `optionType`.
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:01:49 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError", quizType: `Multiple Choice` is not a valid enum value for path `quizType`., optionType: `Single` is not a valid enum value for path `optionType`.
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:05:06 AMValidationError: Question validation failed: options: Cast to embedded failed for value "1" (type string) at path "options" because of "ObjectParameterError", quizType: `Multiple Choice` is not a valid enum value for path `quizType`., optionType: `QA` is not a valid enum value for path `optionType`.
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:07:28 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError", quizType: `MCQ` is not a valid enum value for path `quizType`., optionType: `Single` is not a valid enum value for path `optionType`.
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:07:32 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError", quizType: `MCQ` is not a valid enum value for path `quizType`., optionType: `Single` is not a valid enum value for path `optionType`.
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:07:52 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError", quizType: `MCQ` is not a valid enum value for path `quizType`., optionType: `Single` is not a valid enum value for path `optionType`.
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:11:19 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError"
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:12:27 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError"
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:13:25 AMValidationError: Question validation failed: options: Cast to embedded failed for value "dfd" (type string) at path "options" because of "ObjectParameterError"
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:13:46 AMValidationError: Question validation failed: options: Cast to embedded failed for value "1" (type string) at path "options" because of "ObjectParameterError"
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:14:38 AMValidationError: Question validation failed: options: Cast to embedded failed for value "Paris" (type string) at path "options" because of "ObjectParameterError"
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:20:49
+POST /api/quiz/create 11:17:11 AMReferenceError: auth is not defined
+    at createQuiz (D:\Quizzie\backend\controllers\quizController.js:34:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+POST /api/quiz/create 11:18:00 AMValidationError: Question validation failed: quizType: `text` is not a valid enum value for path `quizType`.
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3073:17
+    at D:\Quizzie\backend\node_modules\mongoose\lib\schemaType.js:1388:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+POST /api/auth/register 4:42:51 AMundefined
+POST /api/auth/register 4:48:27 AMundefined
+POST /api/auth/register 5:30:03 AMundefined
+POST /api/auth/register 5:31:20 AMundefined
+GET /user/dashboard 6:17:29 AM
+POST / 6:45:44 AM
+POST / 6:47:18 AM
+POST / 6:47:22 AM
+POST /create 6:48:45 AM
+POST /api/quiz/create 6:49:39 AM

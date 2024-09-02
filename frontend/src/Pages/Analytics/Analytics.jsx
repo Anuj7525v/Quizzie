@@ -147,7 +147,7 @@ const MyFunction = ({ analytic, i }) => {
 
   const handleShareQuiz = (quizId) => {
     navigator.clipboard.writeText(
-      `https://quizzie-taupe.vercel.app/playquiz/${quizId}`
+      `https://quizzie-drab.vercel.app/playquiz/${quizId}`
     );
 
     toast.success("Link copied to clipboard");

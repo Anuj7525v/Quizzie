@@ -6,7 +6,7 @@ import styles from "./CreateQuiz.module.css";
 function QuizCreated({ quizzType, quizId }) {
     const shareQuiz = () => {
         navigator.clipboard.writeText(
-           `https://quizzie-taupe.vercel.app/playquiz/${quizId}`
+           `https://quizzie-drab.vercel.app/playquiz/${quizId}`
         );
 
         toast.success("Link copied to clipboard");
@@ -24,7 +24,7 @@ function QuizCreated({ quizzType, quizId }) {
                 placeholder={`Your ${quizzType === 0 ? "quiz" : "poll"} link is here`}
                 className={styles.quizNameInput}
                 readOnly
-               value={`https://quizzie-taupe.vercel.app/playQuiz/${quizId}`}
+               value={`https://quizzie-drab.vercel.app/playQuiz/${quizId}`}
             />
 
             <div className={styles.shareBtnDiv}>

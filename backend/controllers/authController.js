@@ -9,7 +9,7 @@ const Auth = require("../models/authModel");
     try {
         const { username,email, password } = req.body;
         if ( !username || !email || !password) {
-            return res.status(400).json({ msg: "Please fill in all fields" });
+            return res.status(400).json({ msg: "Please fill in all fields " });
         }
         const existAuth = await Auth.findOne({ email });
         if (existAuth) {
@@ -52,7 +52,7 @@ const Auth = require("../models/authModel");
         }
         const token = jwt.sign({ id: auth._id }, process.env.SECRET_KEY,
             {
-                expiresIn: "1d",
+                expiresIn: "24h",
             }
         );
         res.status(200).json({     

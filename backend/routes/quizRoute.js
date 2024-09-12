@@ -11,7 +11,7 @@ const {authVerify} = require("../middleware/authVerify.js");
 const router = express.Router();
 
 // create a quiz
-router.post("/", authVerify, createQuiz);
+router.post("/create", authVerify, createQuiz);
 
 // delete a quiz
 router.delete("/:quizId", authVerify, deleteQuiz);

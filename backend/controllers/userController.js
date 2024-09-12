@@ -3,7 +3,7 @@ const Question = require("../models/questionModel");
 
 
 // get all my quizzes to show in analytics
- const getAllMyQuizzes = async (req, res, next) => {
+const getAllMyQuizzes = async (req, res, next) => {
   try {
     const user = req.user;
 
@@ -20,7 +20,7 @@ const Question = require("../models/questionModel");
 };
 
 // get a single question
- const getSingleQuestion = async (req, res, next) => {
+const getSingleQuestion = async (req, res, next) => {
   try {
     const { questionId } = req.params;
 
@@ -36,7 +36,7 @@ const Question = require("../models/questionModel");
 };
 
 // get a single quiz
- const getSingleQuiz = async (req, res, next) => {
+const getSingleQuiz = async (req, res, next) => {
   try {
     const { quizId } = req.params;
 
@@ -52,7 +52,7 @@ const Question = require("../models/questionModel");
 };
 
 // get all question of a quiz for question wise analysis
- const getAllQuestionsOfAQuiz = async (req, res, next) => {
+const getAllQuestionsOfAQuiz = async (req, res, next) => {
   try {
     const { quizId } = req.params;
 
@@ -62,7 +62,7 @@ const Question = require("../models/questionModel");
     }
 
     const questions = Promise.all(
-      quiz?.questions.map(async (questionId) => {
+      quiz.questions.map(async (questionId) => {
         const ques = await Question.findById(questionId);
         return ques;
       })
@@ -76,7 +76,7 @@ const Question = require("../models/questionModel");
 };
 
 // get dashboard information
- const getDashboardInfo = async (req, res, next) => {
+const getDashboardInfo = async (req, res, next) => {
   try {
     const user = req.user;
     if (!user) {
@@ -93,7 +93,12 @@ const Question = require("../models/questionModel");
           userId: user._id,
         },
       },
-      {
+      { $unwind: "$questions" },
+      { $count: "numberOfQuestions" }
+
+
+      /* 
+    {
         $group: {
           _id: "$questions",
         },
@@ -112,7 +117,8 @@ const Question = require("../models/questionModel");
             $sum: "$numberOfTags",
           },
         },
-      },
+      }, 
+      */
     ]);
 
     const totalImpressionsOfAUser = await Quiz.aggregate([
@@ -147,6 +153,6 @@ const Question = require("../models/questionModel");
 };
 
 module.exports = {
-getDashboardInfo,getAllQuestionsOfAQuiz,getSingleQuestion,getSingleQuiz, getAllMyQuizzes
+  getDashboardInfo, getAllQuestionsOfAQuiz, getSingleQuestion, getSingleQuiz, getAllMyQuizzes
 
 };

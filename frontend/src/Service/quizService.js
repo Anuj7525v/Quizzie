@@ -5,11 +5,11 @@ import {BACKEND_URL} from '../constant';
 
 
 // Create a new quiz
-export const createQuiz = async (quizData, token) => {
+export const createQuiz = async (quizData, isTokenVerified) => {
   try {
-    const response = await axios.post(`${BACKEND_URL}/api/quiz/`, quizData, {
+    const response = await axios.post(`${BACKEND_URL}/api/quiz`, quizData, {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${isTokenVerified}`,
       },
     });
     return response.data;

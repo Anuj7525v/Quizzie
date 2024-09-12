@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import convertToK from "../../Component/Converter/convertToK";
 import { LoadingSVG } from "../../assets/LoadingSvg";
 import axios from 'axios';
-import {BACKEND_URL} from "../../constant";
+import { BACKEND_URL } from "../../constant";
 
 
 
@@ -15,12 +15,17 @@ const Dashboard = () => {
   const userState = useSelector((state) => state.user);
   const currentUser = userState?.currentUser;
 
-  
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get(`${BACKEND_URL}/api/user/dashboard`);
+        const res = await axios.get(`${BACKEND_URL}/api/user/dashboard`, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        }
+        );
         setDashboardData(res?.data);
       } catch (error) {
         console.log(error);
@@ -29,7 +34,7 @@ const Dashboard = () => {
     if (currentUser) {
       fetchD();
     }
-  }, []);
+  }, [currentUser, token]);
 
   const [loading, setLoading] = useState(false);
   const [trendingQuizzes, setTrendingQuizzes] = useState([]);
@@ -37,7 +42,12 @@ const Dashboard = () => {
     const fetchD = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`${BACKEND_URL}/api/quiz/trending`);
+        const res = await axios.get(`${BACKEND_URL}/api/quiz/trending`,{
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            },
+
+        });
         setTrendingQuizzes(res?.data);
         setLoading(false);
       } catch (error) {
@@ -49,7 +59,7 @@ const Dashboard = () => {
     if (currentUser) {
       fetchD();
     }
-  }, []);
+  }, [currentUser, token]);
 
   return (
     <div className={styles.dashboard}>

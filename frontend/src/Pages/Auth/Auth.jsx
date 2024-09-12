@@ -17,12 +17,13 @@ export default function Auth() {
         username: "",
         email: "",
         password: "",
-        confirmPass: ""
+       
     });
     const [isSignUp, setIsSignUp] = useState(true);
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const [confirmPass,setConfirmPass] = useState("");
 
 
 
@@ -40,7 +41,7 @@ export default function Auth() {
             if (data.password.length < 6) {
                 newErrors.password = "Weak Password";
             }
-            if (data.password !== data.confirmPass) {
+            if (data.password !== confirmPass) {
                 newErrors.confirmPass = "Passwords do not match";
             }
         } else {
@@ -55,6 +56,16 @@ export default function Auth() {
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
+
+
+    };
+
+    const handleConfirmPassChange = (e) => {
+        setConfirmPass(e.target.value);
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            confirmPass: ""
+        }));
     };
 
     const handleChange = (e) => {
@@ -75,18 +86,18 @@ export default function Auth() {
         if (validate()) {
             if (isSignUp) {
                 try {
-                    const response = await axios.post(`${BACKEND_URL}/api/auth/register`,data,{
-                       
-                            username: data.username,
-                            email: data.email,
-                            password: data.password,
-                            confirmPass: data.confirmPass
-                        }
-                    );
+                    const response = await axios.post(`${BACKEND_URL}/api/auth/register`, {
+                        username: data.username,
+                        email: data.email,
+                        password: data.password
+                    });
+                    
+                    
                     console.log(response.data);
                     toast.success("Register Successfully..");
                     setIsSignUp(false);
                     navigate('/login')
+
 
 
                 } catch (error) {
@@ -97,10 +108,11 @@ export default function Auth() {
             else {
 
                 try {
-                    const response = await axios.post(`${BACKEND_URL}/api/auth/login`,data,{
+                    const response = await axios.post(`${BACKEND_URL}/api/auth/login`, {
                         email: data.email,
                         password: data.password
                     });
+                    
                     localStorage.setItem("token", response.data.token);
                     localStorage.setItem("authId", response.data.authId);
                     dispatch(setUser({ token: response.data.token, authId: response.data.authId }));
@@ -155,12 +167,12 @@ export default function Auth() {
                                 <div className={styles.inputgroup}>
                                     <label htmlFor="username">Name</label>
                                     <input type="text"
-                                        name='username'
+                                        name='username's
                                         onChange={handleChange}
                                         value={data.username}
-                                        className={errors.name ? styles.errorInput : ''} />
+                                        className={errors.username ? styles.errorInput : ''} />
                                     <div className={styles.invalid}>
-                                        {errors.name && <span className={styles.errorText}>{errors.name}</span>}
+                                        {errors.username && <span className={styles.errorText}>{errors.username}</span>}
                                     </div>
                                 </div>
                             }
@@ -195,21 +207,19 @@ export default function Auth() {
 
                         </div>
                         <div>
-                            {isSignUp &&
-                                <div className={styles.inputgroup}>
-                                    <label htmlFor="confirmPass">Cofirm Password</label>
-                                    <input type="password"
-                                        name='confirmPass'
-                                        onChange={handleChange}
-                                        value={data.confirmPass}
-                                        className={errors.confirmPass ? styles.errorInput : ''}
-                                    />
-                                    <div className={styles.invalid}>
-                                        {errors.confirmPass && <span className={styles.errorText}>{errors.confirmPass}</span>}
-                                    </div>
-
+                        {isSignUp && (
+                            <div className={styles.inputgroup}>
+                                <label htmlFor="confirmPass">Confirm Password</label>
+                                <input type="password"
+                                    name='confirmPass'
+                                    onChange={handleConfirmPassChange}
+                                    value={confirmPass}
+                                    className={errors.confirmPass ? styles.errorInput : ''} />
+                                <div className={styles.invalid}>
+                                    {errors.confirmPass && <span className={styles.errorText}>{errors.confirmPass}</span>}
                                 </div>
-                            }
+                            </div>
+                        )}
 
                         </div>
 

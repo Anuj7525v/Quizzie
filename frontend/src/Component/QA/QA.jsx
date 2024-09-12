@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./QA.module.css";
 import { Modal } from 'react-responsive-modal';
 import toast from "react-hot-toast";
-import {BACKEND_URL} from "../../constant";
+import { BACKEND_URL } from "../../constant";
 import axios from "axios";
 
 
@@ -218,10 +218,10 @@ const Form = ({
                 style={{
                   backgroundColor:
                     quizData.slides[activeSlideIdx - 1].correctAnswer ===
-                      i + 1 && "green",
+                    i + 1 && "green",
                   color:
                     quizData.slides[activeSlideIdx - 1].correctAnswer ===
-                      i + 1 && "white",
+                    i + 1 && "white",
                 }}
                 type="text"
                 placeholder="imageUrl"
@@ -381,9 +381,9 @@ export const QA = ({
         options:
           optionType === "textImage"
             ? [
-                { text: "", imageUrl: "" },
-                { text: "", imageUrl: "" },
-              ]
+              { text: "", imageUrl: "" },
+              { text: "", imageUrl: "" },
+            ]
             : [{ text: "" }, { text: "" }],
         correctAnswer: 1,
       },
@@ -404,9 +404,9 @@ export const QA = ({
       options:
         optionType === "textImage"
           ? [
-              { text: "", imageUrl: "" },
-              { text: "", imageUrl: "" },
-            ]
+            { text: "", imageUrl: "" },
+            { text: "", imageUrl: "" },
+          ]
           : [{ text: "" }, { text: "" }],
       correctAnswer: 1,
     });
@@ -487,9 +487,9 @@ export const QA = ({
         options:
           value === "textImage"
             ? [
-                { text: "", imageUrl: "" },
-                { text: "", imageUrl: "" },
-              ]
+              { text: "", imageUrl: "" },
+              { text: "", imageUrl: "" },
+            ]
             : [{ text: "" }, { text: "" }],
       };
       acc.push(modifiedObj);
@@ -579,10 +579,15 @@ export const QA = ({
         questions: quizData.slides,
       };
 
-      // console.log(dataToSend);
+       console.log(dataToSend);
 
-      const res = await axios.post(`${BACKEND_URL}/api/quiz/`, dataToSend);
-      // console.log(res.data);
+      const res = await axios.post(`${BACKEND_URL}/api/quiz`, dataToSend, {
+       headers: {
+         "Content-Type": "application/json",
+         "Authorization": `Bearer ${localStorage.getItem("token")}`
+       }
+      });
+
       setQuizId(res?.data?.quizId);
 
       toast.success(res?.data?.message);

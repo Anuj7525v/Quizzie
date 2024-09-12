@@ -13,9 +13,11 @@ const userRoute = require("./routes/userRoute");
 
 
 
+
 const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
 
 
 

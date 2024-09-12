@@ -184,3 +184,70 @@ POST / 6:47:18 AM
 POST / 6:47:22 AM
 POST /create 6:48:45 AM
 POST /api/quiz/create 6:49:39 AM
+POST /api/auth/quiz/ 7:47:18 PM
+POST /api/quiz/create 8:11:55 PMValidationError: Question validation failed: options: Cast to embedded failed for value "1" (type string) at path "options" because of "ObjectParameterError"
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:19:37
+POST /api/quiz/create 8:13:08 PMValidationError: Question validation failed: options: Cast to embedded failed for value "1" (type string) at path "options" because of "ObjectParameterError"
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:19:37
+POST /api/quiz/create 8:17:24 PMValidationError: Question validation failed: options: Cast to embedded failed for value "1" (type string) at path "options" because of "ObjectParameterError", correctAnswer: Cast to Number failed for value "[ '4' ]" (type Array) at path "correctAnswer"
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:19:37
+POST /api/quiz/create 8:21:22 PMValidationError: Question validation failed: options: Cast to embedded failed for value "Berlin" (type string) at path "options" because of "ObjectParameterError", correctAnswer: Cast to Number failed for value "Paris" (type string) at path "correctAnswer"
+    at Document.invalidate (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:3312:32)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1474:12)
+    at model.$set (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:1128:16)
+    at model.Document (D:\Quizzie\backend\node_modules\mongoose\lib\document.js:177:12)
+    at model.Model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:124:12)
+    at new model (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:4549:15)
+    at D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2639:20
+    at Array.map (<anonymous>)
+    at Function.create (D:\Quizzie\backend\node_modules\mongoose\lib\model.js:2627:34)
+    at D:\Quizzie\backend\controllers\quizController.js:19:37
+POST /api/quiz/create 8:21:39 PMSyntaxError: Unexpected non-whitespace character after JSON at position 234
+    at JSON.parse (<anonymous>)
+    at parse (D:\Quizzie\backend\node_modules\body-parser\lib\types\json.js:92:19)
+    at D:\Quizzie\backend\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at invokeCallback (D:\Quizzie\backend\node_modules\raw-body\index.js:238:16)
+    at done (D:\Quizzie\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (D:\Quizzie\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:514:28)
+    at endReadableNT (node:internal/streams/readable:1589:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+POST /api/quiz/create 8:28:47 PMSyntaxError: Unexpected non-whitespace character after JSON at position 234
+    at JSON.parse (<anonymous>)
+    at parse (D:\Quizzie\backend\node_modules\body-parser\lib\types\json.js:92:19)
+    at D:\Quizzie\backend\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at invokeCallback (D:\Quizzie\backend\node_modules\raw-body\index.js:238:16)
+    at done (D:\Quizzie\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (D:\Quizzie\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:514:28)
+    at endReadableNT (node:internal/streams/readable:1589:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)

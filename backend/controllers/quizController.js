@@ -67,7 +67,10 @@ const Question  = require("../models/questionModel.js");
     const { quizId } = req.params;
 
     const quiz = await Quiz.findById(quizId);
-    if (!quiz) return next(createError(404, "Quiz not found!"));
+    if (!quiz) {
+      return res.status(404).json({ message: "Quiz not found" });
+
+    }
 
     Promise.all(
       quiz?.questions?.map(async (q) => {

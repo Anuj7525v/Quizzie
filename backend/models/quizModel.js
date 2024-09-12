@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const quizSchema = new Schema(
   {
-    authId: {
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "auth",
+      ref: "user",
     },
     quizName: {
       type: String,
@@ -26,7 +26,7 @@ const quizSchema = new Schema(
     
     questions: {
       type: [mongoose.Schema.Types.ObjectId],
-      ref: "question",
+      ref: "Question",
     },
     impressions: {
       type: Number,

@@ -32,7 +32,12 @@ const QuestionWiseAnalysis = () => {
     if (currentUser) {
       fetchD();
     }
-  }, []);
+  }, [
+    quizId,
+    currentUser,
+    userState?.currentUser,
+  
+  ]);
 
   useEffect(() => {
     const fetchD = async () => {
@@ -52,7 +57,12 @@ const QuestionWiseAnalysis = () => {
     if (currentUser) {
       fetchD();
     }
-  }, []);
+  }, [
+    quizId,
+    currentUser,
+    userState?.currentUser,
+    
+  ]);
 
   // console.log(allQuestionsData);
   //   console.log({ quizData });

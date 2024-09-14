@@ -252,3 +252,14 @@ POST /api/quiz/create 8:28:47 PMSyntaxError: Unexpected non-whitespace character
     at endReadableNT (node:internal/streams/readable:1589:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 POST /api/quiz 9:51:54 AM
+GET /api/user/dashboard 7:39:30 PMMongoServerSelectionError: connection <monitor> to 15.206.29.111:27017 timed out
+    at Topology.selectServer (D:\Quizzie\backend\node_modules\mongodb\lib\sdam\topology.js:303:38)
+    at async executeOperation (D:\Quizzie\backend\node_modules\mongodb\lib\operations\execute_operation.js:101:20)
+    at async AggregationCursor._initialize (D:\Quizzie\backend\node_modules\mongodb\lib\cursor\aggregation_cursor.js:46:26)
+    at async [kInit] (D:\Quizzie\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:463:27)
+    at async next (D:\Quizzie\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:520:13)
+    at async AggregationCursor.next (D:\Quizzie\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:237:16)
+    at async [Symbol.asyncIterator] (D:\Quizzie\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:162:34)
+    at async AggregationCursor.toArray (D:\Quizzie\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:280:26)
+    at async Aggregate.exec (D:\Quizzie\backend\node_modules\mongoose\lib\aggregate.js:1058:14)
+    at async getDashboardInfo (D:\Quizzie\backend\controllers\userController.js:90:40)

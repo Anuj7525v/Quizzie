@@ -22,7 +22,7 @@ const QuestionWiseAnalysis = () => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get(`${BACKEND_URL}/api/user/analytics/q/${quizId}`);
+        const res = await axios.get(`http://localhost:4000/api/user/analytics/q/${quizId}`);
         setQuizData(res?.data);
       } catch (error) {
         console.log(error);
@@ -39,7 +39,7 @@ const QuestionWiseAnalysis = () => {
       try {
         setLoading(true);
         const res = await axios.get(
-          `${BACKEND_URL}/api/user/analytics/questionWise/${quizId}`
+          `http://localhost:4000/api/user/analytics/questionWise/${quizId}`
         );
         setAllQuestionsData(res?.data);
         setLoading(false);

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./QAEdit.module.css";
 import { Modal } from "react-responsive-modal";
+import 'react-responsive-modal/styles.css';
 import toast from "react-hot-toast";
-import {BACKEND_URL} from "../../../constant";
+import { BACKEND_URL } from "../../../constant";
 import axios from "axios";
 
 const deleteSVG = (
@@ -215,10 +216,10 @@ const Form = ({
                 style={{
                   backgroundColor:
                     quizData.slides[activeSlideIdx - 1].correctAnswer ===
-                      i + 1 && "green",
+                    i + 1 && "green",
                   color:
                     quizData.slides[activeSlideIdx - 1].correctAnswer ===
-                      i + 1 && "white",
+                    i + 1 && "white",
                 }}
                 type="text"
                 placeholder="imageUrl"
@@ -363,7 +364,7 @@ export const EditQA = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get(`${BACKEND_URL}api/user/analytics/q/${quId}`);
+        const res = await axios.get(`http://localhost:4000/api/user/analytics/q/${quId}`);
         setAllQuizData(res?.data);
       } catch (error) {
         console.log(error);
@@ -376,7 +377,7 @@ export const EditQA = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get(`${BACKEND_URL}/api/user/analytics/questionWise/${quId}`);
+        const res = await axios.get(`http://localhost:4000/api/user/analytics/questionWise/${quId}`);
         setAllQuestionsData(res?.data);
       } catch (error) {
         console.log(error);
@@ -418,9 +419,9 @@ export const EditQA = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
       options:
         optionType === "textImage"
           ? [
-              { text: "", imageUrl: "" },
-              { text: "", imageUrl: "" },
-            ]
+            { text: "", imageUrl: "" },
+            { text: "", imageUrl: "" },
+          ]
           : [{ text: "" }, { text: "" }],
       correctAnswer: 1,
     });
@@ -501,9 +502,9 @@ export const EditQA = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
         options:
           value === "textImage"
             ? [
-                { text: "", imageUrl: "" },
-                { text: "", imageUrl: "" },
-              ]
+              { text: "", imageUrl: "" },
+              { text: "", imageUrl: "" },
+            ]
             : [{ text: "" }, { text: "" }],
       };
       acc.push(modifiedObj);
@@ -586,7 +587,12 @@ export const EditQA = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
         optionType: optionType,
         questions: quizData.slides,
       };
-      const res = await axios.put(`${BACKEND_URL}/api/quiz/update/${quId}`, dataToSend);
+      const res = await axios.put(`http://localhost:4000/api/quiz/update/${quId}`, dataToSend, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("token")}`
+        }
+      });
 
       toast.success(res?.data?.message);
       setOpenEditQuizModal(false);
@@ -609,7 +615,16 @@ export const EditQA = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
       closeOnClickOutside
       withCloseButton={false}
       centered
-      size="lg"
+      styles={{
+        modal: {
+         width: "60vw",
+          position:"relative",
+          top:"5rem",
+          borderRadius:"10px"
+        }
+      }}
+
+      
     >
       <div className={styles.slideForm}>
         <Slide

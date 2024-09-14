@@ -86,7 +86,14 @@ const Analytics = () => {
     const fetchD = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`${BACKEND_URL}/api/user/analytics`);
+        const res = await axios.get('http://localhost:4000/api/user/analytics',
+          {
+            headers: {
+              'Authorization': `Bearer ${currentUser?.token}`
+              }
+              }
+              );
+
         setAnalyticsData(res.data);
         setLoading(false);
       } catch (error) {
@@ -98,7 +105,9 @@ const Analytics = () => {
     if (currentUser) {
       fetchD();
     }
-  }, []);
+  }, [
+    currentUser,
+  ]);
 
   return (
     <div className={styles.analytics}>

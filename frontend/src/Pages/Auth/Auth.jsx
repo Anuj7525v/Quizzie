@@ -86,7 +86,7 @@ export default function Auth() {
         if (validate()) {
             if (isSignUp) {
                 try {
-                    const response = await axios.post(`${BACKEND_URL}/api/auth/register`, {
+                    const response = await axios.post('http://localhost:4000/api/auth/register', {
                         username: data.username,
                         email: data.email,
                         password: data.password
@@ -108,7 +108,7 @@ export default function Auth() {
             else {
 
                 try {
-                    const response = await axios.post(`${BACKEND_URL}/api/auth/login`, {
+                    const response = await axios.post('http://localhost:4000/api/auth/login', {
                         email: data.email,
                         password: data.password
                     });

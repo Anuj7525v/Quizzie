@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 dotenv.config();
 const cors = require("cors");
+
 const authRoute = require("./routes/authRoute");
 const quizRoute = require("./routes/quizRoute");
 const userRoute = require("./routes/userRoute");
@@ -22,7 +23,7 @@ app.use(bodyParser.json());
 
 
 app.use(cors({
-   origin: 'http://localhost:3000'
+   origin: "http://localhost:3000"
 }));
 
 const logStream = fs.createWriteStream(path.join(__dirname, "log.txt"), { flags: 'a', });

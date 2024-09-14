@@ -7,7 +7,7 @@ import {BACKEND_URL} from '../constant';
 // Create a new quiz
 export const createQuiz = async (quizData, isTokenVerified) => {
   try {
-    const response = await axios.post(`${BACKEND_URL}/api/quiz`, quizData, {
+    const response = await axios.post('http://localhost:4000/api/quiz', quizData, {
       headers: {
         Authorization: `Bearer ${isTokenVerified}`,
       },
@@ -21,7 +21,7 @@ export const createQuiz = async (quizData, isTokenVerified) => {
 // Delete a quiz by ID
 export const deleteQuiz = async (quizId, token) => {
   try {
-    const response = await axios.delete(`${BACKEND_URL}/api/quiz/${quizId}`, {
+    const response = await axios.delete(`http://localhost:4000/api/quiz/${quizId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./QA.module.css";
 import { Modal } from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css';
 import toast from "react-hot-toast";
 import { BACKEND_URL } from "../../constant";
 import axios from "axios";
@@ -579,13 +580,13 @@ export const QA = ({
         questions: quizData.slides,
       };
 
-       console.log(dataToSend);
+      console.log(dataToSend);
 
-      const res = await axios.post(`${BACKEND_URL}/api/quiz`, dataToSend, {
-       headers: {
-         "Content-Type": "application/json",
-         "Authorization": `Bearer ${localStorage.getItem("token")}`
-       }
+      const res = await axios.post('http://localhost:4000/api/quiz/create', dataToSend, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("token")}`
+        }
       });
 
       setQuizId(res?.data?.quizId);
@@ -610,7 +611,15 @@ export const QA = ({
       closeOnClickOutside
       withCloseButton={false}
       centered
-      size="lg"
+      styles={{
+        modal: {
+         width: "60vw",
+          position:"relative",
+          top:"5rem",
+          borderRadius:"10px"
+        }
+      }}
+     
     >
       <div className={styles.slideForm}>
         <Slide
@@ -653,6 +662,6 @@ export const QA = ({
           Create Quiz
         </button>
       </div>
-    </Modal>
+    </Modal >
   );
 };

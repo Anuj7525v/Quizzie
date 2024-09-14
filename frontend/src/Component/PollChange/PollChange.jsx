@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./PollChange.module.css";
 import { Modal } from "react-responsive-modal";
+import 'react-responsive-modal/styles.css';
+
+
 import toast from "react-hot-toast";
 import axios from "axios";
 import {BACKEND_URL} from "../../constant";
@@ -243,7 +246,7 @@ export const EditPoll = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get(`${BACKEND_URL}/api/user/analytics/q/${quId}`);
+        const res = await axios.get(`http://localhost:4000/api/user/analytics/q/${quId}`);
         setAllQuizData(res?.data);
       } catch (error) {
         console.log(error);
@@ -256,7 +259,7 @@ export const EditPoll = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get(`${BACKEND_URL}/api/user/analytics/questionWise/${quId}`);
+        const res = await axios.get(`http://localhost:4000/api/user/analytics/questionWise/${quId}`);
         setAllQuestionsData(res?.data);
       } catch (error) {
         console.log(error);
@@ -443,7 +446,13 @@ export const EditPoll = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
         questions: quizData.slides,
       };
 
-      await axios.put(`${BACKEND_URL}quiz/update/${quId}`, dataToSend);
+      await axios.put(`http://localhost:4000/api/quiz/update/${quId}`, dataToSend,{
+        headers: {
+         "Content-Type": "application/json",
+         "Authorization": `Bearer ${localStorage.getItem("token")}`
+       }
+      });
+      
       toast.success("Poll updated successfully!");
       setOpenEditQuizModal(false);
     } catch (error) {
@@ -463,7 +472,15 @@ export const EditPoll = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
       closeOnClickOutside
       withCloseButton={false}
       centered
-      size="lg"
+      styles={{
+        modal: {
+         width: "60vw",
+          position:"relative",
+          top:"5rem",
+          borderRadius:"10px"
+        }
+      }}
+      
     >
       <div className={styles.slideForm}>
         <Slide

@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import styles from "./Poll.module.css";
 import { Modal } from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css';
+
 import toast from "react-hot-toast";
 import {BACKEND_URL} from '../../constant';
 import axios from 'axios';
@@ -437,7 +439,12 @@ export const Poll = ({
 
       // console.log(dataToSend);
 
-      const res = await axios.post(`${BACKEND_URL}/api/quiz/`, dataToSend);
+      const res = await axios.post('http://localhost:4000/api/quiz/create', dataToSend,{
+        headers: {
+         "Content-Type": "application/json",
+         "Authorization": `Bearer ${localStorage.getItem("token")}`
+       }
+      });
       // console.log(res.data);
       setQuizId(res?.data?.quizId);
 
@@ -461,7 +468,14 @@ export const Poll = ({
       closeOnClickOutside
       withCloseButton={false}
       centered
-      size="lg"
+      styles={{
+        modal: {
+         width: "60vw",
+          position:"relative",
+          top:"5rem",
+          borderRadius:"10px"
+        }
+      }}
     >
       <div className={styles.slideForm}>
         <Slide

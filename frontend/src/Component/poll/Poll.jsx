@@ -439,7 +439,7 @@ export const Poll = ({
 
       // console.log(dataToSend);
 
-      const res = await axios.post('http://localhost:4000/api/quiz/create', dataToSend,{
+      const res = await axios.post(`${BACKEND_URL}/api/quiz/create`, dataToSend,{
         headers: {
          "Content-Type": "application/json",
          "Authorization": `Bearer ${localStorage.getItem("token")}`

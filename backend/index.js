@@ -30,9 +30,6 @@ const logStream = fs.createWriteStream(path.join(__dirname, "log.txt"), { flags:
 const errorStream = fs.createWriteStream(path.join(__dirname, "error.txt"), { flags: 'a', });
 
 
-app.get('/', (req, res) => {
-    res.send("all good.").status(200);
-})
 
 app.use((req, res, next) => {
     const now = new Date();
@@ -66,6 +63,12 @@ app.use((err, req, res, next) => {
     errorStream.write(error + err.stack + '\n');
     res.status(500).send("Internal Sever Error");
 });
+
+
+
+app.get('/', (req, res) => {
+    res.send("all good.").status(200);
+})
 
 
 

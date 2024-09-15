@@ -246,7 +246,7 @@ export const EditPoll = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/user/analytics/q/${quId}`);
+        const res = await axios.get(`${BACKEND_URL}/api/user/analytics/q/${quId}`);
         setAllQuizData(res?.data);
       } catch (error) {
         console.log(error);
@@ -259,7 +259,7 @@ export const EditPoll = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/user/analytics/questionWise/${quId}`);
+        const res = await axios.get(`${BACKEND_URL}/api/user/analytics/questionWise/${quId}`);
         setAllQuestionsData(res?.data);
       } catch (error) {
         console.log(error);
@@ -446,7 +446,7 @@ export const EditPoll = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
         questions: quizData.slides,
       };
 
-      await axios.put(`http://localhost:4000/api/quiz/update/${quId}`, dataToSend,{
+      await axios.put(`${BACKEND_URL}/api/quiz/update/${quId}`, dataToSend,{
         headers: {
          "Content-Type": "application/json",
          "Authorization": `Bearer ${localStorage.getItem("token")}`

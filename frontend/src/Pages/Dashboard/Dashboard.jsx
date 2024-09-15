@@ -20,7 +20,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get('http://localhost:4000/api/user/dashboard', {
+        const res = await axios.get(`${BACKEND_URL}/api/user/dashboard`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -42,7 +42,7 @@ const Dashboard = () => {
     const fetchD = async () => {
       try {
         setLoading(true);
-        const res = await axios.get('http://localhost:4000/api/quiz/trending',{
+        const res = await axios.get(`${BACKEND_URL}/api/quiz/trending`,{
           headers: {
             'Authorization': `Bearer ${token}`,
             },

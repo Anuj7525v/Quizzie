@@ -15,7 +15,7 @@ const PlayQuiz = () => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/user/analytics/q/${quizId}`);
+        const res = await axios.get(`${BACKEND_URL}/api/user/analytics/q/${quizId}`);
         setQuizData(res?.data);
       } catch (error) {
         console.log(error);
@@ -29,7 +29,7 @@ const PlayQuiz = () => {
   useEffect(() => {
     const fetchD = async () => {
       try {
-        await axios.put(`http://localhost:40000/api/quiz/${quizId}`);
+        await axios.put(`${BACKEND_URL}0/api/quiz/${quizId}`);
       } catch (error) {
         console.log(error);
       }
@@ -44,7 +44,7 @@ const PlayQuiz = () => {
     const fetchD = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:4000/api/user/analytics/questionWise/${quizId}`
+          `${BACKEND_URL}/api/user/analytics/questionWise/${quizId}`
         );
         setQuizQuestions(res?.data);
       } catch (error) {
@@ -110,7 +110,7 @@ const StartQuiz = ({ setShowComp, quizData, quizQuestions, setUserScore }) => {
     setIsLoading(true);
     if (currQuestion === totalQuestionInQuiz) {
       try {
-        const res = await axios.patch(`http://localhost:4000/api/quiz/playQuiz`, answers);
+        const res = await axios.patch(`${BACKEND_URL}/api/quiz/playQuiz`, answers);
         setUserScore(res?.data?.score);
       } catch (error) {
         console.log(error);
@@ -146,7 +146,7 @@ const StartQuiz = ({ setShowComp, quizData, quizQuestions, setUserScore }) => {
           quizData?.quizType === "QA"
         ) {
           try {
-            const res = await axios.patch('http://localhost:4000/api/quiz/playQuiz', answers);
+            const res = await axios.patch(`${BACKEND_URL}/api/quiz/playQuiz`, answers);
             setUserScore(res?.data?.score);
           } catch (error) {
             console.log(error);

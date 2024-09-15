@@ -5,7 +5,7 @@ import {BACKEND_URL} from "../constant";
 // Get all quizzes (for analytics)
 export const getAllQuizzes = async () => {
   try {
-    const response = await axios.get('http://localhost:4000/api/user/analytics');
+    const response = await axios.get(`${BACKEND_URL}/api/user/analytics`);
     return response.data;
   } catch (error) {
     console.error('Error fetching quizzes:', error);
@@ -16,7 +16,7 @@ export const getAllQuizzes = async () => {
 // Get a specific question by ID
 export const getQuestionById = async (questionId) => {
   try {
-    const response = await axios.get(`http://localhost:4000/api/user/analytics/${questionId}`);
+    const response = await axios.get(`${BACKEND_URL}/api/user/analytics/${questionId}`);
     return response.data;
   } catch (error) {
     console.error(`Error fetching question with ID ${questionId}:`, error);
@@ -27,7 +27,7 @@ export const getQuestionById = async (questionId) => {
 // Get a specific quiz by ID
 export const getQuizById = async (quizId) => {
   try {
-    const response = await axios.get(`http://localhost:4000/api/user/analytics/q/${quizId}`);
+    const response = await axios.get(`${BACKEND_URL}/api/user/analytics/q/${quizId}`);
     return response.data;
   } catch (error) {
     console.error(`Error fetching quiz with ID ${quizId}:`, error);
@@ -38,7 +38,7 @@ export const getQuizById = async (quizId) => {
 // Get all questions for a specific quiz
 export const getAllQuestionsForQuiz = async (quizId) => {
   try {
-    const response = await axios.get(`http://localhost:4000/api/user/analytics/questionWise/${quizId}`);
+    const response = await axios.get(`${BACKEND_URL}/api/user/analytics/questionWise/${quizId}`);
     return response.data;
   } catch (error) {
     console.error(`Error fetching questions for quiz with ID ${quizId}:`, error);
@@ -49,7 +49,7 @@ export const getAllQuestionsForQuiz = async (quizId) => {
 // Get dashboard data
 export const getDashboardData = async () => {
   try {
-    const response = await axios.get('http://localhost:4000/api/user/dashboard');
+    const response = await axios.get(`${BACKEND_URL}/api/user/dashboard`);
     return response.data;
   } catch (error) {
     console.error('Error fetching dashboard data:', error);

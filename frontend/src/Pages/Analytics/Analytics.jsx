@@ -86,7 +86,7 @@ const Analytics = () => {
     const fetchD = async () => {
       try {
         setLoading(true);
-        const res = await axios.get('http://localhost:4000/api/user/analytics', {
+        const res = await axios.get(`${BACKEND_URL}/api/user/analytics`, {
             headers: {
               'Authorization': `Bearer ${currentUser?.token}`
               }

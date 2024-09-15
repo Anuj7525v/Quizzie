@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 
 app.use(cors({
-   origin: "http://localhost:3000"
+   origin: "*"
 }));
 
 const logStream = fs.createWriteStream(path.join(__dirname, "log.txt"), { flags: 'a', });

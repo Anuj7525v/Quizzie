@@ -4,7 +4,7 @@ import './App.css';
 import Home from "./Pages/Home/Home";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Analytics from "./Pages/Analytics/Analytics";
-import QuestionWiseAnalysis from "./Pages/QuestionWiseAnalysis/QuestionWiseAnalysis";
+import QuestionWiseAnalysis from  "./Pages/QuestionWiseAnalysis/QuestionWiseAnalysis";
 import PlayQuiz from "./Pages/PlayQuiz/PlayQuiz";
 import PageNotFound from './Pages/NotFound/PageNotFound';
 import Auth from "./Pages/Auth/Auth";
@@ -62,8 +62,10 @@ function App() {
         },
         {
           path: "analytics/questionwise/:quizId",
-          element: currentUser ? <QuestionWiseAnalysis /> : <Auth isSignUp={false} />,
-        },
+        //  element: currentUser ? <QuestionWiseAnalysis /> : <Auth isSignUp={false} />,
+         element : <QuestionWiseAnalysis/>
+
+      },
       ],
     },
     {
@@ -84,3 +86,5 @@ function App() {
 }
 
 export default App;
+
+

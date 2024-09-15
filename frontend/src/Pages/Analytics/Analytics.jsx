@@ -86,8 +86,7 @@ const Analytics = () => {
     const fetchD = async () => {
       try {
         setLoading(true);
-        const res = await axios.get('http://localhost:4000/api/user/analytics',
-          {
+        const res = await axios.get('http://localhost:4000/api/user/analytics', {
             headers: {
               'Authorization': `Bearer ${currentUser?.token}`
               }
@@ -220,8 +219,7 @@ const MyFunction = ({ analytic, i }) => {
         </span>
       </td>
       <td>
-        <Link
-          to={`/dashboard/analytics/questionWise/${analytic._id}`}
+        <Link to={`analytics/questionWise/${analytic._id}`}
           className={styles.link}
         >
           <span className={styles.questionWise}>Question Wise Analysis</span>

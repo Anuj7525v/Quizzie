@@ -263,3 +263,11 @@ GET /api/user/dashboard 7:39:30 PMMongoServerSelectionError: connection <monitor
     at async AggregationCursor.toArray (D:\Quizzie\backend\node_modules\mongodb\lib\cursor\abstract_cursor.js:280:26)
     at async Aggregate.exec (D:\Quizzie\backend\node_modules\mongoose\lib\aggregate.js:1058:14)
     at async getDashboardInfo (D:\Quizzie\backend\controllers\userController.js:90:40)
+GET /api/user/analytics/questionWise/66e59bba3a345addc23950f0 11:12:00 PMMongoNetworkError: connect ETIMEDOUT 15.206.31.202:27017, connect ENETUNREACH 64:ff9b::fce:1fca:27017
+    at connectionFailureError (D:\Quizzie\backend\node_modules\mongodb\lib\cmap\connect.js:353:20)
+    at TLSSocket.<anonymous> (D:\Quizzie\backend\node_modules\mongodb\lib\cmap\connect.js:268:44)
+    at Object.onceWrapper (node:events:629:26)
+    at TLSSocket.emit (node:events:514:28)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)

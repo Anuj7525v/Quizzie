@@ -35,7 +35,7 @@ const QuestionWiseAnalysis = () => {
   }, [
     quizId,
     currentUser,
-    userState?.currentUser,
+    
   
   ]);
 
@@ -60,8 +60,8 @@ const QuestionWiseAnalysis = () => {
   }, [
     quizId,
     currentUser,
-    userState?.currentUser,
-    
+   
+
   ]);
 
   // console.log(allQuestionsData);

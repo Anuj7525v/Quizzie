@@ -372,7 +372,9 @@ export const EditQA = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
     };
 
     fetchD();
-  }, [quId]);
+  }, [quId
+    
+  ]);
 
   useEffect(() => {
     const fetchD = async () => {
@@ -385,7 +387,9 @@ export const EditQA = ({ openEditQuizModal, setOpenEditQuizModal, quId }) => {
     };
 
     fetchD();
-  }, [quId]);
+  }, [quId
+
+  ]);
 
   const [activeSlideIdx, setActiveSlideIdx] = useState(1);
   const [slideCount, setSlideCount] = useState(allQuestionsData?.length);

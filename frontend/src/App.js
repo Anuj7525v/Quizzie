@@ -61,7 +61,7 @@ function App() {
           element: <Analytics />, // Analytics route inside Home
         },
         {
-          path: "analytics/questionwise/:quizId",
+          path: "/dashboard/analytics/questionwise/:quizId",
         //  element: currentUser ? <QuestionWiseAnalysis /> : <Auth isSignUp={false} />,
          element : <QuestionWiseAnalysis/>
 

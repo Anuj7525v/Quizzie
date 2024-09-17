@@ -60,14 +60,14 @@ function App() {
           path: "analytics", // Relative path
           element: <Analytics />, // Analytics route inside Home
         },
-        {
-          path: "/dashboard/analytics/questionwise/:quizId",
-        //  element: currentUser ? <QuestionWiseAnalysis /> : <Auth isSignUp={false} />,
-         element : <QuestionWiseAnalysis/>
-
-      },
       ],
     },
+    {
+      path: "/dashboard/analytics/questionwise/:quizId",
+    //  element: currentUser ? <QuestionWiseAnalysis /> : <Auth isSignUp={false} />,
+     element : <QuestionWiseAnalysis/>
+
+  },
     {
       path: "/playquiz/:quizId",
       element: <PlayQuiz />,
